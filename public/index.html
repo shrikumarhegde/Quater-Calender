@@ -17,16 +17,13 @@
       <div class="subheader">
         Calendar Events
         <span class="selected-date"> </span>
-        <a class="btn-link" id="addNewEvent"> + Add New Event </a>
+        <a class="btn-link hide" id="addNewEvent"> + Add New Event </a>
       </div>
       <div id="event-container">
-
-
       </div>
     </div>
 
     <div class="modal-backdrop hide"></div>
-
     <div class="modal hide">
       <div class="modal__dialog">
         <div class="modal__content">
@@ -34,9 +31,12 @@
             <span class="icon-close"></span>
           </a>
           <div class="modal__header">
-            <h1 class="modal__title">Add Event</h1>
-            date:
-            <span class="selected-date"> </span>
+            <div class="modal-title">New Event
+              <div class="date-header">
+                <span class="selected-date"> </span>
+              </div>
+            </div>
+
           </div>
           <div class="modal__body">
 
@@ -46,7 +46,7 @@
               <textarea class="textarea textarea--well" id="eventDesc" placeholder="Event Desc" rows="3"></textarea>
               <br/>
               <select aria-placeholder="select" id="eventType">
-                <option  disabled selected>Select your option</option>
+                <option disabled selected>Select Event Type</option>
                 <option>type1 </option>
                 <option>type2 </option>
                 <option>type3 </option>
@@ -57,18 +57,13 @@
             </form>
           </div>
           <div class="modal__footer">
-            <button class="btn" id="modal-feedback-close">Cancel</button>
-            <button class="btn btn--secondary" id="eventSubmit">Submit</button>
+            <button class="btn btn-secondary" id="modal-feedback-close">Cancel</button>
+            <button class="btn " id="eventSubmit">Submit</button>
           </div>
         </div>
       </div>
-
-
     </div>
-
   </div>
-
-
 
 
   <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>

@@ -41,8 +41,6 @@ body {
   margin-top: 2px;
 }
 
-
-
 .cld-rwd {
   float: left;
 }
@@ -50,7 +48,6 @@ body {
 .cld-fwd {
   float: right;
 }
-
 
 .cld-labels,
 .cld-days {
@@ -80,7 +77,7 @@ body {
 
 .cld-day.nextMonth,
 .cld-day.prevMonth {
-  color:#e2e2e2;
+  color: #e2e2e2;
 }
 
 .cld-number {
@@ -103,7 +100,6 @@ body {
   font-size: 12px;
 }
 
-
 .cld-number.eventday {
   font-weight: bold;
   color: #049fd9;
@@ -114,7 +110,7 @@ body {
 }
 
 .cld-day.nextMonth {
-  cursor:not-allowed;
+  cursor: not-allowed;
 }
 
 .grid-container {
@@ -174,8 +170,7 @@ body {
   display: none;
 }
 
-
-.type1 {
+.type1, .Type {
   border-left: 5px solid #049fd9;
 }
 
@@ -190,6 +185,7 @@ body {
 .type4 {
   border-left: 5px solid #ffcc00;
 }
+
 .type5 {
   border-left: 5px solid red;
 }
@@ -198,6 +194,9 @@ body {
   border-left: 5px solid rebeccapurple;
 }
 
+.type6 {
+  border-left: 5px solid greenyellow;
+}
 
 .modal-backdrop {
   position: absolute;
@@ -212,20 +211,59 @@ body {
   display: none;
 }
 
-
 .modal {
   position: absolute;
   top: 60px;
   background: #fff;
-  width: 400px;
-  height: 200px;
-  padding: 20px;
+  width: 500px;
+  height: 250px;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.23);
   left: 50%;
   margin-left: -200px;
   text-align: center;
+  padding-bottom: 40px;
 }
 
 .completeDayFormat {
   display: none;
+}
+
+.date-header {
+  display: inline;
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #00364a;
+}
+
+.modal-title {
+  display: block;
+  background: #049fd9;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+input,
+textarea,
+select {
+  padding: 5px;
+  margin: 5px;
+  width: 60%;
+  border: 1px solid #eaeaea;
+}
+
+button {
+  padding: 10px 30px;
+  border: 1px solid #eaeaea;
+  background: #059fda;
+  color: #fff;
+  cursor: pointer;
+  margin:20px 0;
+}
+
+.btn-secondary {
+  background: #58585b;
 }

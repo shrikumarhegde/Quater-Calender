@@ -329,6 +329,7 @@ function caleandar(el, data, settings) {
 }
 
 function calendarDayClickEvent() {
+  $('#addNewEvent').removeClass('hide');
   $('li.active').removeClass('active');
   this.parentElement.className += ' active';
   document.getElementById('event-container').innerHTML = '';
@@ -342,13 +343,7 @@ function calendarDayClickEvent() {
 // $('li.active').removeClass('active');
 
 $(document).ready(function () {
-
-  
   initDatabase();
-
-
-
-
   $('#addNewEvent').click(function () {
     $('.modal').removeClass('hide');
     $('.modal-backdrop').removeClass('hide');
@@ -365,7 +360,14 @@ $(document).ready(function () {
     insertRecord();
     location.reload();
   });
- 
-
 
 })
+
+
+// initiate the calendar
+var events = [];
+var settings = {};
+var element = document.getElementById('caleandar');
+
+
+
