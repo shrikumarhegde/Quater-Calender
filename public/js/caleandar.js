@@ -333,8 +333,10 @@ function calendarDayClickEvent() {
   $('li.active').removeClass('active');
   this.parentElement.className += ' active';
   document.getElementById('event-container').innerHTML = '';
-  if (this.previousSibling)
-    document.getElementById('event-container').innerHTML = this.previousSibling.innerHTML;
+  if (this.previousSibling){
+    document.getElementById('event-container').innerHTML="<span class=count> Notification Count: "+this.previousSibling.children.length +"</span>" ;
+    document.getElementById('event-container').innerHTML+=  this.previousSibling.innerHTML;
+  }
   var selectedDate = $(this).parent().find('.completeDayFormat').text();
   $('.selected-date').html( moment(selectedDate).format('DD-MMM-YYYY'));
 

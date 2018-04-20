@@ -13,7 +13,7 @@
     <div class="column">
       <div id="caleandar"></div>
     </div>
-    <div class="column">
+    <div class="column scroll">
       <div class="subheader hide">
         Calendar Events
         <span class="selected-date"> </span>
@@ -41,19 +41,24 @@
           <div class="modal__body">
 
             <form>
+                <label> Event Type </label> 
+                <select aria-placeholder="select" id="eventType">
+                    <option disabled selected>Select Event Type</option>
+                    <option>type1 </option>
+                    <option>type2 </option>
+                    <option>type3 </option>
+                    <option>type4 </option>
+                    <option>type5 </option>
+                    <option>type6 </option>
+                  </select>
+                  <br/>
+                  <label> Event Name </label> 
               <input type="text" id="eventName" placeholder="Event Name" />
               <br/>
+              <label> Event Desc </label> 
               <textarea class="textarea textarea--well" id="eventDesc" placeholder="Event Desc" rows="3"></textarea>
-              <br/>
-              <select aria-placeholder="select" id="eventType">
-                <option disabled selected>Select Event Type</option>
-                <option>type1 </option>
-                <option>type2 </option>
-                <option>type3 </option>
-                <option>type4 </option>
-                <option>type5 </option>
-                <option>type6 </option>
-              </select>
+              
+             
             </form>
           </div>
           <div class="modal__footer">
@@ -69,7 +74,6 @@
   <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
   <script type="text/javascript" src="js/caleandar.js"></script>
   <script type="text/javascript" src="js/database.js"></script>
-  <script type="text/javascript" src="js/demo.js"></script>
 
 </body>
 
