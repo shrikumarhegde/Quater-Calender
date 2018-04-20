@@ -329,7 +329,7 @@ function caleandar(el, data, settings) {
 }
 
 function calendarDayClickEvent() {
-  $('#addNewEvent').removeClass('hide');
+  $('.subheader').removeClass('hide');
   $('li.active').removeClass('active');
   this.parentElement.className += ' active';
   document.getElementById('event-container').innerHTML = '';
