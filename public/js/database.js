@@ -8,7 +8,7 @@ var insertStatement = "INSERT INTO Events (event_date, title,description,event_t
 
 var updateStatement = "UPDATE Events SET title = ?, description = ? WHERE id=?";
 
-var deleteStatement = "DELETE FROM Events WHERE id=?";
+var deleteStatement = "DELETE FROM Events WHERE event_type = ? and event_date=? and title=? ";
 
 var dropStatement = "DROP TABLE Events";
 
@@ -82,14 +82,13 @@ function insertRecord() // Get value from Input and insert record . Function Cal
 
 }
 
-function deleteRecord(id) // Get id of record . Function Call when Delete Button Click..
+function deleteRecord(type,date,title) // Get id of record . Function Call when Delete Button Click..
 
 {
 
-    var iddelete = id.toString();
 
     db.transaction(function (tx) {
-        tx.executeSql(deleteStatement, [id], showRecords, onError);
+        tx.executeSql(deleteStatement, [type,date,title], showRecords, onError);
         alert("Delete Sucessfully");
     });
 

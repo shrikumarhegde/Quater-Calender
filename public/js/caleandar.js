@@ -249,7 +249,6 @@ function createCalendar(calendar, element, adjuster) {
                   day.className += " clickable";
                   // day.addEventListener('click', calendar.Options.EventClick.bind.apply(calendar.Options.EventClick, [null].concat(z)));
                 }
-              } else {
                 a.addEventListener('click', calendar.Options.EventClick.bind(null, z));
                 if (calendar.Options.EventTargetWholeDay) {
                   day.className += " clickable";
@@ -265,7 +264,7 @@ function createCalendar(calendar, element, adjuster) {
             }
             title.appendChild(a);
           } else {
-            title.innerHTML += "<div class='event-card " + calendar.Model[n].Type + "'><div class='event-header'> " + calendar.Model[n].Title + " </div> <div class='event-body'>" + calendar.Model[n].Desc + " </div></div>";
+            title.innerHTML += "<div class='event-card " + calendar.Model[n].Type + "' data-date='"+calendar.Model[n].Date+"' data-title='"+calendar.Model[n].Title+"' data-type='"+ calendar.Model[n].Type+"'> <div class='btn-events hide'> <i class='fas fa-pencil-alt' id='editEvents' data-date=calendar></i> <i class='fas fa-trash' id='deleteEvents' ></i> </div>  <div class='event-header'> " + calendar.Model[n].Title + " </div> <div class='event-body'>" + calendar.Model[n].Desc + " </div></div>";
           }
           day.appendChild(title);
         }
@@ -333,12 +332,12 @@ function calendarDayClickEvent() {
   $('li.active').removeClass('active');
   this.parentElement.className += ' active';
   document.getElementById('event-container').innerHTML = '';
-  if (this.previousSibling){
-    document.getElementById('event-container').innerHTML="<span class=count> Notification Count: "+this.previousSibling.children.length +"</span>" ;
-    document.getElementById('event-container').innerHTML+=  this.previousSibling.innerHTML;
+  if (this.previousSibling) {
+    document.getElementById('event-container').innerHTML = "<span class=count> Notification Count: " + this.previousSibling.children.length + "</span>";
+    document.getElementById('event-container').innerHTML += this.previousSibling.innerHTML;
   }
   var selectedDate = $(this).parent().find('.completeDayFormat').text();
-  $('.selected-date').html( moment(selectedDate).format('DD-MMM-YYYY'));
+  $('.selected-date').html(moment(selectedDate).format('DD-MMM-YYYY'));
 
 }
 
@@ -363,13 +362,28 @@ $(document).ready(function () {
     location.reload();
   });
 
+  $(document).on('mouseenter', '.event-card', function () {
+    $(this).find(".btn-events").show();
+  }).on('mouseleave', '.event-card', function () {
+    $(this).find(".btn-events").hide();
+  });
+
+
+
+  $(document).on('click','#deleteEvents',function(){
+   var selectedEvebt= $(this).parents('.event-card').data();
+    deleteRecord(selectedEvebt.type,selectedEvebt.date,selectedEvebt.title);
+    location.reload();
+  });
+
 })
+
+
+
+
 
 
 // initiate the calendar
 var events = [];
 var settings = {};
 var element = document.getElementById('caleandar');
-
-
-

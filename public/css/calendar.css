@@ -301,3 +301,37 @@ body {
   padding: 10px 20px;
   color: #828282;
 }
+
+.btn-events {
+  position: absolute;
+  right: 20px;;
+
+}
+
+.btn-events >i {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.blue {
+  color: #049fd9;
+}
+
+.red {
+  color: red;
+}
+.legend {
+  display: block;
+}
+
+.types  > span {
+  padding-left: 4px;
+  display: inline-block;
+  margin-right: 20px; 
+}
+
+.column >span {
+  margin:5px 0;
+  color: #58585b;
+  font-size: 11px;
+}
